@@ -42,7 +42,7 @@ typedef jint     jsize;
 
 #ifdef __cplusplus
 /*
- * Reference types, in C++
+ * Reference types, in C++(python)
  */
 class _jobject {};
 class _jclass : public _jobject {};
@@ -78,7 +78,7 @@ typedef _jobject*       jweak;
 
 #else /* not __cplusplus */
 
-/*
+/*.   
  * Reference types, in C.
  */
 typedef void*           jobject;
@@ -190,7 +190,7 @@ struct JNINativeInterface {
 
     jobject     (*AllocObject)(JNIEnv*, jclass);
     jobject     (*NewObject)(JNIEnv*, jclass, jmethodID, ...);
-    jobject     (*NewObjectV)(JNIEnv*, jclass, jmethodID, va_list);
+    jobject     (*NewObjectV)(JNIEnv*, jclass, jmethodID:, va_list);
     jobject     (*NewObjectA)(JNIEnv*, jclass, jmethodID, jvalue*);
 
     jclass      (*GetObjectClass)(JNIEnv*, jobject);
